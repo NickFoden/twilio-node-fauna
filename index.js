@@ -5,14 +5,14 @@ const app = express();
 const bodyParser = require("body-parser");
 const faunadb = require("faunadb"),
   q = faunadb.query;
-const sendMessage = require("./functions");
+const sendMessage = require("./functions").default;
 const twilio = require("twilio");
 const twilioClient = new twilio(
   process.env.TWILLIO_ACCOUNT_SID,
   process.env.TWILIO_AUTH_TOKEN
 );
 const MessagingResponse = require("twilio").twiml.MessagingResponse;
-const clientFauna = new faunadb.Client({ secret: process.env.FAUNA_KEY });
+// const clientFauna = new faunadb.Client({ secret: process.env.FAUNA_KEY });
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.post("/sms", (req, res) => {

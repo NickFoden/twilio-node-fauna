@@ -1,4 +1,10 @@
-export const sendMessage = () => {
+const twilio = require("twilio");
+const twilioClient = new twilio(
+  process.env.TWILLIO_ACCOUNT_SID,
+  process.env.TWILIO_AUTH_TOKEN
+);
+
+const sendMessage = () => {
   twilioClient.messages
     .create({
       body: "UP THE IRONS",
@@ -10,3 +16,5 @@ export const sendMessage = () => {
       console.log("error " + err);
     });
 };
+
+module.exports = sendMessage;

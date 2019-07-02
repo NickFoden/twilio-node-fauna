@@ -1,5 +1,5 @@
 {
-  "name": "twilio-node",
+  "name": "twilio-node-fauna",
   "version": "1.0.0",
   "description": "node server for twilio text tasks",
   "main": "index.js",
@@ -20,6 +20,8 @@
     "twilio": "^3.33.0"
   },
   "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-node": "^4.0.0",
     "nodemon": "^1.19.1"
   }
 }
