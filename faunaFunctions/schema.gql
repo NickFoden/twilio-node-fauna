@@ -1,0 +1,10 @@
+type User {
+  Active: Boolean!
+  Phone: String!
+  Country: String!
+  Zip: String!
+}
+
+type Query {
+  allUsers: [User!]!
+}
